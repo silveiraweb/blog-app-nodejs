@@ -70,7 +70,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // mongoose
 mongoose.Promisse = global.Promisse;
-const mongoUri ="mongodb+srv://silveira:hotline3619@cluster0.kcpqx.mongodb.net/blog_app?retryWrites=true&w=majority";
+const mongoUri ="mongodb+srv://<username>:<password>@cluster0.kcpqx.mongodb.net/blog_app?retryWrites=true&w=majority";
 mongoose
   .connect(mongoUri, {
     useNewUrlParser: true,
