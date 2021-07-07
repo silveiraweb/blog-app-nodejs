@@ -1,0 +1,20 @@
+
+<h3>Editar categoria:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/categoria/edit" method="post">
+            <input type="hidden" name="id" value="{{categoria._id}}">
+            <label for="nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome da categoria" value="{{categoria.nome}}">
+        
+            <label for="slug">Slug</label>
+            <input class="form-control" type="text" name="slug" id="slug" placeholder="Slug da categoria" value="{{categoria.slug}}">
+            
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control"  name="descricao" id="descricao" placeholder="Descrição da categoria" value="{{categoria.descricao}}" rows="10">{{categoria.descricao}}</textarea>
+           
+            <br>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+</div>

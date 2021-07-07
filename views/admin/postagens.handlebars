@@ -1,0 +1,49 @@
+<a href="/admin/postagens/add">
+<button class="btn btn-success">Nova postagem</button>
+<hr>
+</a>
+<h3 class="card-header">Blog App Admin</h3>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">      
+{{#each postagens}}
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        
+                        <h4><strong>Titulo</strong><br> {{titulo}}</h4>
+                        <p><small><strong>Subtitulo</strong> {{subtitulo}}</small></p>
+                        <p><small><strong>Data de criação</strong> {{date}}</small></p>
+                        <p><strong>Descrição:</strong> {{descricao}}</p>
+                        <p><strong>Conteúdo:</strong> {{conteudo}}</p>
+                        <p><strong>Slug</strong> {{slug}}</p>
+                        <p><strong>Categoria </strong> {{categoria.nome}}</p>
+
+                        <div class="buttonsForm"> 
+                            <a href="/admin/postagens/edit/{{_id}}">
+                                <button class="btn btn-success">Editar</button>
+                            </a>
+
+                            <a href="/admin/postagem/delete/{{_id}}" method="POST">
+                        
+                                <button type="submit" class="btn btn-danger mt-2 deletar">Deletar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+{{else}}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <p>Nenhuma Postagem registrada</p>
+                    </div>
+                </div>
+
+{{/each}}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="card card-body">
+    <h4>Categorias</h4>
+{{#each categorias}}
+    <div class="card card-body mt-2">
+        <a href="/categorias/{{slug}}"><h4>{{nome}}</h4></a>
+        <p>{{descricao}}</p>
+        <p><small><em>{{slug}}</em></small></p>
+        <p><small><em>{{date}}</em></small></p>
+    </div>
+{{else}}
+    <div class="card card-body mt-2">
+        <p>Nenhuma categoria cadastrada</p>
+    </div>
+{{/each}}
+</div> 
+{{#each categorias}}
+    <a href="/categorias/{{slug}}">{{nome}}</a>
+{{/each}}

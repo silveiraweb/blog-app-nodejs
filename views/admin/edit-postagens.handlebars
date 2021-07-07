@@ -1,0 +1,39 @@
+<h3>Editar postagem:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/postagem/edit" method="post">
+            <input type="hidden" name="id" value="{{postagem._id}}">
+
+            <div class="mb-3">
+            <label for="titulo">Titulo</label>
+            <input class="form-control" type="text" name="titulo" id="titulo" placeholder="Titulo" value="{{postagem.titulo}}">
+            </div>
+
+            <div class="mb-3">
+            <label for="subtitulo">Subtitulo</label>
+            <input class="form-control" type="text" name="subtitulo" id="subtitulo" placeholder="Subtitulo" value="{{postagem.subtitulo}}">
+            </div>
+
+            <label for="descricao">Descrição</label>
+            <input class="form-control" type="text" name="descricao" id="descricao" placeholder="Descricao da postagem" value="{{postagem.descricao}}">
+
+            <label for="conteudo">Conteudo</label>
+            <textarea class="form-control"  name="conteudo" id="conteudo" placeholder="Conteudo da postagem"  rows="10">{{postagem.conteudo}}</textarea>
+
+            <label for="slug">Slug</label>
+            <input class="form-control" type="text" name="slug" id="slug" placeholder="Slug da postagem" value="{{postagem.slug}}">
+
+            <label for="categoria">Categoria</label>
+            <select class="form-control" name="categoria" id="categoria" >
+                {{#each categorias}}
+                    <option value="{{_id}}">{{nome}}</opption>
+                {{else}}
+                    <option value="0">Nenhuma categoria registrada</opption>
+                {{/each}}
+            </select>
+
+            <br>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+</div>
